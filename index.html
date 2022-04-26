@@ -41,12 +41,14 @@
       <div class="container">
         <div class="home-section d-flex justify-content-center align-items-center">
           <div class="ilustrasi mx-4">
-            <div class="image mx-3"></div>
+            <div class="bulet mx-3">
+              <div class="foto"><img src="/img/ima2.png" alt="ima"></div>
+            </div>
           </div>
           <div class="slogan mx-3">
             <h3>Hello There, I'm</h3>
             <h1>RISMA PUTRI ANGGRAENI</h1>
-            <h4>INFORMATIC MANAGEMENT STUDENT</h4>
+            <h4>STUDENT</h4>
           </div>
         </div>
       </div>
@@ -59,10 +61,8 @@
         <div class="container isi" data-aos="fade-up" >
           <h3 class="my-4">ABOUT ME</h3>
           <p style="font-size: 1.1rem">
-            Exercitation in dolor laboris culpa fugiat irure culpa occaecat ullamco laborum in. Commodo amet quis id dolore tempor. Exercitation
-            mollit quis occaecat ut aliqua excepteur mollit. Laboris aliquip nulla nostrud qui eu deserunt consectetur mollit. Et occaecat ex nostrud
-            culpa. Consectetur nulla adipisicing eiusmod ex id pariatur incididunt do consectetur. Id cupidatat consectetur amet sint velit anim esse
-            Lorem eiusmod ea officia adipisicing consequat.
+            Hello! My name is Risma Putri Anggraeni. I'm currently studying in my second year at LPKIA of Digital Economics, majoring Management Informatics and System Information as my concentration. 
+            I am currently interested in working in the UI/UX field. I’m honest and punctual, I work well in a team but also on my own as I like to set myself goals which I will achieve, I have good listening and communication skills. I have a creative mind and am always up for new challenges. I am well organized and always plan ahead to make sure I manage my time well.
           </p>
         </div>
       </div>
@@ -79,7 +79,7 @@
               <p class="date mb-1">2020 - NOW</p>
               <div class="content">
                 <h4 class="title mb-1">IDE LPKIA</h4>
-                <p class="jurusan m-0">Informatic Management</p>
+                <p class="jurusan m-0">Management Informatics</p>
               </div>
             </div>
           </div>
@@ -204,29 +204,36 @@
     <section id="contact">
       <div class="container d-flex justify-content-center align-items-center">
         <div class="box-contact p-3" data-aos="fade-up">
-          <form action="#">
-            <div class="baris d-flex justify-content-between align-items-center mt-3 mx-3">
-              <div class="input-group">
-                <input type="text" id="name" required>
-                <label for="name">Your Name</label>
+            <form name="ima-contact-form">
+                <div class="baris d-flex justify-content-between align-items-center mt-3 mx-3">
+                  <div class="input-group">
+                    <input type="text" id="name" name="nama" required>
+                    <label for="name">Your Name</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="input-group mx-3">
+                  <textarea id="message" rows="8" name="pesan" required></textarea>
+                  <label for="message">Your message</label>
+                </div>
+                <div class="pembungkus d-flex">
+                <button class="cssbuttons-io-button btn-kirim mx-2" type="submit"> SEND
+                    <div class="icon">
+                      <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
+                    </div>
+                  </button>
+                  <div class="spinner-grow btn-loading d-none" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
               </div>
-              <div class="input-group">
-                <input type="text" id="email" required>
-                <label for="email">Your Email</label>
-              </div>
-            </div>
-            <div class="input-group mx-3">
-              <textarea id="message" rows="8" required></textarea>
-              <label for="message">Your message</label>
-            </div>
-            <button class="cta">
-              <span>SUBMIT</span>
-              <svg viewBox="0 0 13 10" height="10px" width="15px">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </button>
-          </form>
+            </form>
+          <div class="alert alert-warning alert-dismissible fade show my-alert d-none my-3 mx-2" role="alert">
+            <strong>Thank You!</strong> Your message has been received.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
         </div>
         <div class="text-contact" data-aos="fade-up">
           <h3>GET IN TOUCH</h3>
@@ -271,9 +278,9 @@
     </section>  
     <!-- portfolio end -->
     <!-- footer begin -->
-    <footer id="sticky-footer" class="flex-shrink-0 py-4">
-      <div class="container text-center">
-        <p>Copyright &copy;2020 All rights reserved. | This website is made with <i class="fa-solid fa-heart"></i> by Risma</p>
+    <footer id="sticky-footer" class="flex-shrink-0 py-3">
+      <div class="container text-center mt-3">
+        <p>Copyright &copy;2022 All rights reserved. | This website is made with <i class="fa-solid fa-heart"></i> by Risma</p>
       </div>
     </footer>
 
@@ -322,5 +329,34 @@
       glare: true,
       "max glare": 1,
     });</script>
+
+    <!-- Contact Form -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbylxB_HS5Ji8C6sNFlUWUIg2uwf7-Is-qZ8BC-UGzx2cbeEucCWP5j9hgm9SpnnewbL7w/exec'
+      const form = document.forms['ima-contact-form']
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
+
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // Ketika tombol submit di klik tampilkan icon loading
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // Hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // Tampilkan alert
+            myAlert.classList.toggle('d-none');
+            // Reset Form
+            form.reset();
+            console.log('Success!', response)
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
